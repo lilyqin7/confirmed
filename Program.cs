@@ -9,11 +9,28 @@ class Program
     {
         Console.Write("Enter a GitHub username: ");
         string username = Console.ReadLine();
+        Console.WriteLine($"Fetching repos for: {username}...");
 
         if (string.IsNullOrWhiteSpace(username))
         {
             Console.WriteLine("Invalid username.");
             return;
         }
+
+        var service = new GitHubService();
+        var repos = await service.GetTopReposAsync(username);
+
+        if (repos == null || repos.Count == 0)
+        {
+            Console.WriteLine("No repositories found.");
+            return;
+        }
+
+        foreach (var repo in repos)
+            Console.WriteLine(repo.ToString());
+        string json = JsonSerializer.Serialize(repos, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText("repos.json", json);
+        Console.WriteLine("\nData written to repos.json");
+
     }
 }
