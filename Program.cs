@@ -29,8 +29,10 @@ class Program
         foreach (var repo in repos)
             Console.WriteLine(repo.ToString());
         string json = JsonSerializer.Serialize(repos, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText("repos.json", json);
-        Console.WriteLine("\nData written to repos.json");
+        string outputPath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "github-ui", "public", "repos.json");
+        Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
+        File.WriteAllText(outputPath, json);
+        Console.WriteLine($"\nData written to {Path.GetFullPath(outputPath)}");
 
     }
 }

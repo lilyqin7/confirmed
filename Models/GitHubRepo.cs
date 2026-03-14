@@ -8,5 +8,5 @@ public class GitHubRepo
     public DateTime LastUpdated { get; set; }
 
     public override string ToString() =>
-        $"\n📦 {Name}\n   ⭐ {Stars} stars | 💻 {Language}\n   {Description}\n   🔗 {Url}\n   🕒 Last updated: {LastUpdated:yyyy-MM-dd}";
+        $"\n{Name}\n   {Stars} stars | {Language}\n   {Description}\n   {Url}\n   Last updated: {LastUpdated:yyyy-MM-dd}";
 }
