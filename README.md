@@ -38,30 +38,45 @@ Clone the repo:
 - Top 5 repositories are ranked by stargazer count
 - If a repo has no description or language, defaults to "No description" / "Unknown"
 
+## What I Would Improve With More Time
+
+- Add GitHub personal access token support to raise the API rate limit
+- Add pagination handling for users with more than 100 repositories
+- Improve error handling with more descriptive messages
+- Add unit tests for the service layer
+- Polish the React UI with proper styling
+
 ## Design Notes
 
 ### 1. Supporting Multiple CRM Providers
 
+I would introduce an `IRepoProvider` interface with a method like `GetTopReposAsync(string username)`,
+then implement it separately for each provider (e.g. `GitHubService`, `GitLabService`).
+The calling code in `Program.cs` would depend on the interface, not the concrete class,
+making it easy to swap or add providers without changing the core logic.
+A factory or dependency injection container could resolve the correct provider at runtime
+based on configuration.
+
 ### 2. Technical Concerns for a Real Integration
 
--**Authentication:** Real integrations use OAuth 2.0, requiring secure token storage, refresh token handling, and scoped permissions, which are more complext than unauthenticated API calls
+- **Authentication:** Real integrations use OAuth 2.0, requiring secure token storage, refresh token handling, and scoped permissions, which are more complext than unauthenticated API calls
 
--**Rate limiting:** Production APIs enforce strict rate limits; I'd add retry logic with exponential backoff and respect 'Retry-After' headers
+- **Rate limiting:** Production APIs enforce strict rate limits; I'd add retry logic with exponential backoff and respect 'Retry-After' headers
 
--**Data consistency:** External API schemas can change without notice, so I'd add versioning and defnsive deserialization to avoid breaking changes
+- **Data consistency:** External API schemas can change without notice, so I'd add versioning and defnsive deserialization to avoid breaking changes
 
--**Security:** API keys and secrets must be stored in environmental variables or a secrets manager, never hardcodced or committed to the repo
+- **Security:** API keys and secrets must be stored in environmental variables or a secrets manager, never hardcodced or committed to the repo
 
 ### 3. Next Steps for Production
 
--**Unit tests** for `GitHubService` with mocked HTTP responses
+- **Unit tests** for `GitHubService` with mocked HTTP responses
 
--**Dependency injection** via `IHttpClientFactory` for better testability and connection management
+- **Dependency injection** via `IHttpClientFactory` for better testability and connection management
 
--**Configuration** via `appsettings.json` for base URLs, timeouts, and token management
+- **Configuration** via `appsettings.json` for base URLs, timeouts, and token management
 
--**Pagination** to handle users with more than 100 repositories
+- **Pagination** to handle users with more than 100 repositories
 
--**Logging** with structured logs and retry logic for failed requests
+- **Logging** with structured logs and retry logic for failed requests
 
--**CI/CD pipeline** to run tets and lint on every push
+- **CI/CD pipeline** to run tets and lint on every push
