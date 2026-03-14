@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "torvalds/linux",
+    "Description": "Linux kernel source tree",
+    "Stars": 180000,
+    "Language": "C",
+    "Url": "https://github.com/torvalds/linux",
+    "LastUpdated": "2026-01-29T12:00:00Z"
+  },
+  {
+    "Name": "facebook/react",
+    "Description": "The library for web and native user interfaces",
+    "Stars": 220000,
+    "Language": "JavaScript",
+    "Url": "https://github.com/facebook/react",
+    "LastUpdated": "2026-01-15T08:30:00Z"
+  },
+  {
+    "Name": "microsoft/vscode",
+    "Description": "Visual Studio Code source code",
+    "Stars": 160000,
+    "Language": "TypeScript",
+    "Url": "https://github.com/microsoft/vscode",
+    "LastUpdated": "2026-01-20T10:00:00Z"
+  },
+  {
+    "Name": "openai/whisper",
+    "Description": "Robust speech recognition via large-scale weak supervision",
+    "Stars": 70000,
+    "Language": "Python",
+    "Url": "https://github.com/openai/whisper",
+    "LastUpdated": "2025-12-10T14:00:00Z"
+  },
+  {
+    "Name": "vercel/next.js",
+    "Description": "The React framework for the web",
+    "Stars": 120000,
+    "Language": "JavaScript",
+    "Url": "https://github.com/vercel/next.js",
+    "LastUpdated": "2026-01-28T09:00:00Z"
+  }
+]
