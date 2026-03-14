@@ -9,7 +9,16 @@ A two-part application that fetches a GitHub user's top repositories and display
 
 ## How to Run
 
+### Getting Started
+
+Clone the repo:
+`git clone https://github.com/YOUR_USERNAME/confirmed.git `
+
 ### Part A — Console App
 
 1. Install [.NET SDK](https://dotnet.microsoft.com/download)
 2. Navigate to the root folder:
+
+```cd
+
+```
