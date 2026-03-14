@@ -9,6 +9,8 @@ A two-part application that fetches a GitHub user's top repositories and display
 
 ## How to Run
 
+> **Important:** Run the console app (Part A) before the React app (Part B) to generate
+
 ### Getting Started
 
 Clone the repo:
