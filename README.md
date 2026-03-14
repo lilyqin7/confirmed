@@ -17,8 +17,13 @@ Clone the repo:
 ### Part A — Console App
 
 1. Install [.NET SDK](https://dotnet.microsoft.com/download)
-2. Navigate to the root folder:
+2. Navigate to the root folder: `cd confirmed`
+3. Run the app: `dotnet run`
+4. Enter a GitHub username when prompted. `repos.json` will be written to `github-ui/public/`.
 
-```cd
+### Part B — React UI
 
-```
+1. Navigate to the root folder from `confirmed`: `cd github-ui`
+2. Install dependences: `npm install`
+3. Run the dev server: `npm run dev`
+4. Open `http://localhost:5173` in your browser
